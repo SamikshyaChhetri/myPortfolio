@@ -36,10 +36,10 @@ const Home = () => {
   if (!inClient) return <div></div>;
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between  items-center">
       <div className="flex justify-between">
         <div className="w-36"></div>
-        <AnimatedTestimonials testimonials={testimonials} />;
+        <AnimatedTestimonials testimonials={testimonials} />
       </div>
       <div>
         <SocialMedia></SocialMedia>
