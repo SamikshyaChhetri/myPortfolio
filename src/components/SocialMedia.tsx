@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 const SocialMedia = () => {
   return (
-    <div className="flex flex-col gap-5 border-2 border-black rounded-md p-1 mr-5">
+    <div className="flex flex-col gap-5 border-2 border-black rounded-md p-1  ">
       <div className="rounded-full border-black p-3 hover:bg-gray-600 hover:text-white ">
         <a href="https://github.com/SamikshyaChhetri">
           <Icon icon="line-md:github-loop" width="28" height="28" />
