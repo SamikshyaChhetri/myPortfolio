@@ -5,13 +5,14 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 
 const page = () => {
   return (
-    <BackgroundBeamsWithCollision>
-      <div>
+    <div className="w-full ">
+      <BackgroundBeamsWithCollision className="flex flex-col">
         <Header></Header>
+        <div className="h-20"></div>
         <Home></Home>
-        <About></About>
-      </div>
-    </BackgroundBeamsWithCollision>
+      </BackgroundBeamsWithCollision>
+      <About></About>
+    </div>
   );
 };
 
