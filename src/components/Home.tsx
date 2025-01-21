@@ -7,7 +7,7 @@ const Home = () => {
     {
       quote:
         "I specialize in creating intuitive and visually appealing interfaces that enhance user experiences and bring designs to life.",
-      name: "Samikshya Chhetri",
+      name: "Samikshya Chhetri🐥",
       designation: "Frontend Developer",
       src: "/samu.jpg",
     },
@@ -36,12 +36,12 @@ const Home = () => {
   if (!inClient) return <div></div>;
 
   return (
-    <div className="flex justify-between  items-center">
-      <div className="flex justify-between">
-        <div className="w-36"></div>
+    <div className="flex  items-center justify-center">
+      <div>
         <AnimatedTestimonials testimonials={testimonials} />
       </div>
-      <div>
+      <div className="flex justify-between">
+        <div className="w-56"></div>
         <SocialMedia></SocialMedia>
       </div>
     </div>
