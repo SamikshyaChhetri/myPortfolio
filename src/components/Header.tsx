@@ -34,7 +34,7 @@ const Header = () => {
           </Button>
         </CoolMode>
       </div>
-      <div className="rounded-full h-5 w-5"></div>
+      {/* <div className="rounded-full h-5 w-5"></div> */}
     </div>
   );
 };
