@@ -12,10 +12,12 @@ const Header = () => {
           </Button>
         </CoolMode>
         <CoolMode>
-          <Button variant="outline">
-            <Icon icon="solar:user-circle-broken" width="24" height="24" />
-            About
-          </Button>
+          <a href="#about">
+            <Button variant="outline">
+              <Icon icon="solar:user-circle-broken" width="24" height="24" />
+              About
+            </Button>
+          </a>
         </CoolMode>
         <CoolMode>
           <Button variant="outline">

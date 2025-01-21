@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 const About = () => {
   return (
-    <div className="flex justify-center h-screen  items-center">
+    <div className="flex justify-center h-screen  items-center" id="about">
       <div className="w-[50%] flex  flex-col gap-10    border-2 border-blue-600 h-fit p-5 bg-gradient-to-b from-white to-neutral-200 relative rounded-lg">
         <div className="flex justify-center text-2xl items-center gap-1 bg-blue-600 text-white p-1 px-2 rounded-lg absolute left-3 -top-6">
           <h3>About</h3>
