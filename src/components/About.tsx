@@ -9,7 +9,7 @@ const About = () => {
           <Icon icon="solar:user-bold" width="24" height="24" />
         </div>
         <div className="pt-10">
-          Hii! I am Samikshya Chhetri, a web Developer from Nepal. I am a
+          Hi! I am Samikshya Chhetri, a Web Developer from Nepal. I am a
           passionate and enthusiastic developer with a strong interest in web
           development and software engineering. I specialize in creating
           intuitive and visually appealing interfaces that enhance user
@@ -17,13 +17,6 @@ const About = () => {
           scalable and efficient backend systems, turning ideas into robust and
           reliable server-side solutions.
         </div>
-        {/* <div className="flex flex-col gap-3">
-          <div>Experience</div>
-          <div className="flex  gap-20">
-            <div>No Experience </div>
-            <div>In learning phase</div>
-          </div>
-        </div> */}
         <div className="flex flex-col gap-5 relative">
           <div className="h-3 w-3 bg-blue-600 rounded-full absolute top-[50px] -left-3"></div>
           <div className="h-32 border-[0.5px] border-blue-600 w-0 absolute top-14 -left-1.5"></div>
