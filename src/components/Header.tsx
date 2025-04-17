@@ -7,18 +7,10 @@ const Header = () => {
       <div className="flex gap-3 m-4">
         <CoolMode>
           <Button variant="outline">
-            <Icon icon="solar:home-broken" width="24" height="24" />
-            Home
+            <Icon icon="solar:home-line-duotone" width="24" height="24" /> Home
           </Button>
         </CoolMode>
-        <CoolMode>
-          <a href="#about">
-            <Button variant="outline">
-              <Icon icon="solar:user-circle-broken" width="24" height="24" />
-              About
-            </Button>
-          </a>
-        </CoolMode>
+
         <CoolMode>
           <Button variant="outline">
             <Icon icon="carbon:skill-level-basic" width="32" height="32" />
@@ -27,13 +19,21 @@ const Header = () => {
         </CoolMode>
         <CoolMode>
           <Button variant="outline">
-            <Icon
-              icon="solar:laptop-minimalistic-broken"
-              width="24"
-              height="24"
-            />
+            <Icon icon="solar:laptop-3-linear" width="24" height="24" />
             Projects
           </Button>
+        </CoolMode>
+        <CoolMode>
+          <a href="#about">
+            <Button variant="outline">
+              <Icon
+                icon="solar:phone-calling-rounded-linear"
+                width="24"
+                height="24"
+              />
+              Contact
+            </Button>
+          </a>
         </CoolMode>
       </div>
       {/* <div className="rounded-full h-5 w-5"></div> */}
