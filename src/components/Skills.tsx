@@ -64,7 +64,7 @@ const frameworks: { name: string; icon: ReactNode }[] = [
   },
   {
     name: "Shadcn",
-    icon: <Icon icon="skill-icons:shadcn-dark" width="36" height="36" />,
+    icon: <Icon icon="simple-icons:shadcnui" width="36" height="36" />,
   },
 ];
 const database: { name: string; icon: ReactNode }[] = [
@@ -90,11 +90,11 @@ const hosting: { name: string; icon: ReactNode }[] = [
 
   {
     name: "Render",
-    icon: <Icon icon="skill-icons:render" width="36" height="36" />,
+    icon: <Icon icon="simple-icons:render" width="36" height="36" />,
   },
   {
     name: "Cloudflare",
-    icon: <Icon icon="skill-icons:cloudflare" width="36" height="36" />,
+    icon: <Icon icon="simple-icons:cloudflare" width="36" height="36" />,
   },
   {
     name: "Netlify",
@@ -103,6 +103,37 @@ const hosting: { name: string; icon: ReactNode }[] = [
     ),
   },
 ];
+const others: { name: string; icon: ReactNode }[] = [
+  {
+    name: "Git",
+    icon: <Icon icon="skill-icons:git" width="36" height="36" />,
+  },
+  {
+    name: "Github",
+    icon: <Icon icon="logos:github-icon" width="36" height="36" />,
+  },
+  {
+    name: "Zod",
+    icon: <Icon icon="logos:zod" width="36" height="36" />,
+  },
+  {
+    name: "Eslint",
+    icon: <Icon icon="devicon:eslint" width="36" height="36" />,
+  },
+  {
+    name: "Nodemon",
+    icon: <Icon icon="devicon:nodemon" width="36" height="36" />,
+  },
+  {
+    name: "Figma",
+    icon: <Icon icon="logos:figma" width="36" height="36" />,
+  },
+  {
+    name: "Canva",
+    icon: <Icon icon="devicon:canva" width="36" height="36" />,
+  },
+];
+
 const Skills = () => {
   return (
     <div className="ml-24">
@@ -125,7 +156,7 @@ const Skills = () => {
         <div>
           <div className="flex flex-col gap-5">
             <div className="font-bold text-lg">Frameworks and Libraries</div>
-            <div className="flex  gap-5">
+            <div className="flex  gap-5 flex-wrap w-[50%]">
               {frameworks.map((item) => {
                 return (
                   <SkillsCard
@@ -138,8 +169,8 @@ const Skills = () => {
             </div>
           </div>
         </div>
-        <div>
-          <div>Database amd ORM</div>
+        <div className="flex flex-col gap-5">
+          <div className="font-bold text-lg">Database amd ORM</div>
           <div className="flex  gap-5">
             {database.map((item) => {
               return (
@@ -152,8 +183,8 @@ const Skills = () => {
             })}
           </div>
         </div>
-        <div>
-          <div>Hosting and SAAS</div>
+        <div className="flex flex-col gap-5">
+          <div className="font-bold text-lg">Hosting and SAAS</div>
           <div className="flex  gap-5">
             {hosting.map((item) => {
               return (
@@ -166,8 +197,20 @@ const Skills = () => {
             })}
           </div>
         </div>
-
-        <div>Others</div>
+        <div className="flex flex-col gap-5">
+          <div className="font-bold text-lg">Others</div>
+          <div className="flex  gap-5 flex-wrap w-[50%]">
+            {others.map((item) => {
+              return (
+                <SkillsCard
+                  name={item.name}
+                  icon={item.icon}
+                  key={item.name}
+                ></SkillsCard>
+              );
+            })}
+          </div>
+        </div>{" "}
       </div>
     </div>
   );
