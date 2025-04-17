@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { ReactNode } from "react";
 import SkillsCard from "./SkillsCard";
 
-const mySkills: { name: string; icon: ReactNode }[] = [
+const languages: { name: string; icon: ReactNode }[] = [
   {
     name: "Typescript",
     icon: <Icon icon="skill-icons:typescript" width="36" height="36" />,
@@ -21,22 +21,22 @@ const mySkills: { name: string; icon: ReactNode }[] = [
   },
   {
     name: "C",
-    icon: <Icon icon="skill-icons:html" width="36" height="36" />,
+    icon: <Icon icon="skill-icons:c" width="36" height="36" />,
   },
   {
     name: "C++",
-    icon: <Icon icon="skill-icons:html" width="36" height="36" />,
+    icon: <Icon icon="skill-icons:cpp" width="36" height="36" />,
   },
 ];
 const Skills = () => {
   return (
-    <div>
-      <div className="flex flex-col  items-center">
+    <div className="ml-24">
+      <div className="flex flex-col ">
         <div>Skills</div>
-        <div>
-          <div>Languages</div>
-          <div>
-            {mySkills.map((item) => {
+        <div className="flex flex-col gap-5">
+          <div className="font-bold text-lg">Languages</div>
+          <div className="flex  gap-5">
+            {languages.map((item) => {
               return (
                 <SkillsCard
                   name={item.name}
