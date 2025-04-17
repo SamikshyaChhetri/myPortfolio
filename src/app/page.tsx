@@ -1,6 +1,6 @@
-import About from "@/components/About";
 import Header from "@/components/Header";
 import Home from "@/components/Home";
+import Skills from "@/components/Skills";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 const page = () => {
@@ -11,7 +11,7 @@ const page = () => {
         <div className="h-20"></div>
         <Home></Home>
       </BackgroundBeamsWithCollision>
-      <About></About>
+      <Skills></Skills>
     </div>
   );
 };
