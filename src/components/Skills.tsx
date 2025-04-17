@@ -51,7 +51,7 @@ const frameworks: { name: string; icon: ReactNode }[] = [
     icon: <Icon icon="skill-icons:tailwindcss-dark" width="36" height="36" />,
   },
   {
-    name: "Material UI",
+    name: "MUI",
     icon: <Icon icon="skill-icons:materialui-dark" width="36" height="36" />,
   },
   {
@@ -94,7 +94,7 @@ const hosting: { name: string; icon: ReactNode }[] = [
   },
   {
     name: "Cloudflare",
-    icon: <Icon icon="simple-icons:cloudflare" width="36" height="36" />,
+    icon: <Icon icon="devicon:cloudflare" width="36" height="36" />,
   },
   {
     name: "Netlify",
@@ -138,7 +138,15 @@ const Skills = () => {
   return (
     <div className="ml-24">
       <div className="flex flex-col gap-10">
-        <div>Skills</div>
+        <div className="flex flex-row items-center justify-center font-bold text-[30px] pt-20 text-blue-700">
+          <Icon
+            icon="fluent-color:laptop-24"
+            width="50"
+            height="50"
+            className="w-fit"
+          />
+          Skills
+        </div>
         <div className="flex flex-col gap-5">
           <div className="font-bold text-lg">Languages</div>
           <div className="flex  gap-5">
