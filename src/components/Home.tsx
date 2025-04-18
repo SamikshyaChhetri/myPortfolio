@@ -26,7 +26,6 @@ const Home = () => {
       src: "/sami.jpg",
     },
   ];
-
   const [inClient, setinClient] = useState(false);
 
   useEffect(() => {
