@@ -1,7 +1,6 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { ReactNode } from "react";
 import SkillsCard from "./SkillsCard";
-
 const languages: { name: string; icon: ReactNode }[] = [
   {
     name: "Typescript",
@@ -28,7 +27,6 @@ const languages: { name: string; icon: ReactNode }[] = [
     icon: <Icon icon="skill-icons:cpp" width="36" height="36" />,
   },
 ];
-
 const frameworks: { name: string; icon: ReactNode }[] = [
   {
     name: "React",
@@ -223,5 +221,4 @@ const Skills = () => {
     </div>
   );
 };
-
 export default Skills;

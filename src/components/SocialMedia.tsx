@@ -10,7 +10,6 @@ const SocialMedia = () => {
           </div>
         </a>
       </div>
-
       <div>
         <a href="https://www.facebook.com/samuu.baniya/">
           <div className="flex items-center justify-center rounded-full border-black p-3 hover:bg-[#1877F2] hover:text-white transition duration-300">
@@ -18,7 +17,6 @@ const SocialMedia = () => {
           </div>
         </a>
       </div>
-
       <div className="w-full border border-gray-300"></div>
       <div>
         <a href="https://www.instagram.com/samuu_hehe/">
@@ -27,7 +25,6 @@ const SocialMedia = () => {
           </div>
         </a>
       </div>
-
       <div>
         <a href="https://www.linkedin.com/in/samikshya-b-chhetri-673935257/">
           <div className="flex items-center justify-center rounded-full border-black p-3 hover:bg-[#0077B5] hover:text-white transition duration-300">
@@ -35,7 +32,6 @@ const SocialMedia = () => {
           </div>
         </a>
       </div>
-
       <div className="w-full border border-gray-300"></div>
 
       <div>
