@@ -8,7 +8,9 @@ const page = () => {
     <div className="w-full ">
       <BackgroundBeamsWithCollision className="flex flex-col">
         <Header></Header>
+
         <div className="h-20"></div>
+
         <Home></Home>
       </BackgroundBeamsWithCollision>
       <Skills></Skills>
