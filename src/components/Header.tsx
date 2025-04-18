@@ -10,7 +10,6 @@ const Header = () => {
             <Icon icon="solar:home-line-duotone" width="24" height="24" /> Home
           </Button>
         </CoolMode>
-
         <CoolMode>
           <Button variant="outline">
             <Icon icon="carbon:skill-level-basic" width="32" height="32" />
@@ -36,7 +35,6 @@ const Header = () => {
           </a>
         </CoolMode>
       </div>
-      {/* <div className="rounded-full h-5 w-5"></div> */}
     </div>
   );
 };
