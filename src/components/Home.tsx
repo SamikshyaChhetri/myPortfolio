@@ -35,7 +35,7 @@ const Home = () => {
   if (!inClient) return <div></div>;
 
   return (
-    <div className="flex  items-center justify-center">
+    <div className="flex  items-center justify-center ">
       <div>
         <AnimatedTestimonials testimonials={testimonials} />
       </div>
