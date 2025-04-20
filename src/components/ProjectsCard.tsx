@@ -23,7 +23,7 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ image, desc, link, name }) => {
         )}
         <div className="flex flex-col justify-between h-full gap-3">
           <p className="text-sm text-gray-600 dark:text-neutral-300">{desc}</p>
-          <Button className="bg-blue-700 w-full hover:bg-blue-600">
+          <Button className="bg-purple-700 w-full hover:bg-purple-600">
             <a
               href={link}
               target="_blank"

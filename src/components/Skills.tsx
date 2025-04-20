@@ -119,7 +119,7 @@ const Skills = () => {
     <div className="flex gap-1">
       <div className="mx-10">
         <div className="flex flex-col gap-3">
-          <div className="flex flex-row  font-bold text-[30px] pt-20 text-blue-700 text-center justify-center">
+          <div className="flex flex-row  font-bold text-[30px] pt-20 text-purple-700 text-center justify-center">
             <Icon icon="fluent-color:laptop-24" width="50" height="50" />
             Skills
           </div>

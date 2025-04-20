@@ -53,7 +53,7 @@ const myProjects = [
 
 const Projects = () => {
   return (
-    <section className="my-10 md:px-28  flex flex-col gap-10 bg-gradient-to-br from-blue-50 via-white to-purple-10">
+    <section className="my-10 md:px-28  flex flex-col gap-10 bg-gradient-to-br from-purple-50 via-white to-purple-10">
       <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white my-5">
         My Projects
       </h2>

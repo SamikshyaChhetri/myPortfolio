@@ -14,11 +14,11 @@ import { Textarea } from "./ui/textarea";
 
 export function Contact() {
   return (
-    <div className="flex justify-center    bg-gradient-to-br from-blue-50 via-white to-purple-100 items-center ">
+    <div className="flex justify-center    bg-gradient-to-br from-purple-50 via-white to-purple-100 items-center ">
       <div className="min-h-screen w-[60%]  flex items-center justify-center ">
         <Card className="w-full max-w-md shadow-xl rounded-2xl border border-gray-200 bg-white relative overflow-hidden">
           <CardHeader>
-            <CardTitle className="text-2xl text-center text-blue-700">
+            <CardTitle className="text-2xl text-center text-purple-700">
               Get Connected with me
             </CardTitle>
             <CardDescription className="text-center">
@@ -54,7 +54,7 @@ export function Contact() {
           <CardFooter className="pt-4 flex justify-end">
             <Button
               type="submit"
-              className="w-full bg-blue-700 hover:bg-blue-600"
+              className="w-full bg-purple-700 hover:bg-purple-600"
             >
               Send Message
             </Button>
