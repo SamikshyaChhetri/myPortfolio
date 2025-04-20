@@ -117,60 +117,87 @@ const others = [
 const Skills = () => {
   return (
     <div className="flex gap-1">
-      <div className="ml-28">
+      <div className="mx-10">
         <div className="flex flex-col gap-3">
-          <div className="flex flex-row  font-bold text-[30px] pt-20 text-blue-700">
+          <div className="flex flex-row  font-bold text-[30px] pt-20 text-blue-700 text-center justify-center">
             <Icon icon="fluent-color:laptop-24" width="50" height="50" />
             Skills
           </div>
+          <div className="flex justify-between">
+            <div>
+              <div className="flex flex-col gap-3 mt-2">
+                <div className="font-bold text-lg">Languages</div>
+                <div className="flex gap-5 flex-wrap">
+                  {languages.map((item) => (
+                    <SkillsCard
+                      name={item.name}
+                      icon={item.icon}
+                      key={item.name}
+                    />
+                  ))}
+                </div>
+              </div>
 
-          <div className="flex flex-col gap-3">
-            <div className="font-bold text-lg">Languages</div>
-            <div className="flex gap-5 flex-wrap">
-              {languages.map((item) => (
-                <SkillsCard name={item.name} icon={item.icon} key={item.name} />
-              ))}
+              <div className="flex flex-col gap-3 mt-2">
+                <div className="font-bold text-lg">
+                  Frameworks and Libraries
+                </div>
+                <div className="flex gap-5 flex-wrap ">
+                  {frameworks.map((item) => (
+                    <SkillsCard
+                      name={item.name}
+                      icon={item.icon}
+                      key={item.name}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3 mt-2">
+                <div className="font-bold text-lg">Database and ORM</div>
+                <div className="flex gap-5">
+                  {database.map((item) => (
+                    <SkillsCard
+                      name={item.name}
+                      icon={item.icon}
+                      key={item.name}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className="flex flex-col gap-3">
-            <div className="font-bold text-lg">Frameworks and Libraries</div>
-            <div className="flex gap-5 flex-wrap ">
-              {frameworks.map((item) => (
-                <SkillsCard name={item.name} icon={item.icon} key={item.name} />
-              ))}
-            </div>
-          </div>
+            <IconCloudSection></IconCloudSection>
+            <div>
+              <div className="flex flex-col gap-3 mt-2">
+                <div className="font-bold text-lg">Hosting and SAAS</div>
+                <div className="flex gap-5">
+                  {hosting.map((item) => (
+                    <SkillsCard
+                      name={item.name}
+                      icon={item.icon}
+                      key={item.name}
+                    />
+                  ))}
+                </div>
+              </div>
 
-          <div className="flex flex-col gap-3">
-            <div className="font-bold text-lg">Database and ORM</div>
-            <div className="flex gap-5">
-              {database.map((item) => (
-                <SkillsCard name={item.name} icon={item.icon} key={item.name} />
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="font-bold text-lg">Hosting and SAAS</div>
-            <div className="flex gap-5">
-              {hosting.map((item) => (
-                <SkillsCard name={item.name} icon={item.icon} key={item.name} />
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="font-bold text-lg">Others</div>
-            <div className="flex gap-5 flex-wrap ">
-              {others.map((item) => (
-                <SkillsCard name={item.name} icon={item.icon} key={item.name} />
-              ))}
+              <div className="flex flex-col gap-3 mt-2">
+                <div className="font-bold text-lg">Others</div>
+                <div className="flex gap-5 flex-wrap ">
+                  {others.map((item) => (
+                    <SkillsCard
+                      name={item.name}
+                      icon={item.icon}
+                      key={item.name}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <IconCloudSection></IconCloudSection>
     </div>
   );
 };
