@@ -8,7 +8,7 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 const page = () => {
   return (
     <div className="w-full ">
-      <BackgroundBeamsWithCollision className="flex flex-col bg-gradient-to-br from-blue-50 via-white to-purple-100 ">
+      <BackgroundBeamsWithCollision className="flex flex-col bg-gradient-to-br from-purple-50 via-white to-purple-100 ">
         <Header></Header>
 
         <div className="h-20"></div>
