@@ -62,7 +62,6 @@ export function Contact() {
           <BorderBeam duration={8} size={120} />
         </Card>
       </div>
-      {/* <div></div> */}
       <img src="/contactImg.svg" alt="" className="h-80 " />
     </div>
   );
