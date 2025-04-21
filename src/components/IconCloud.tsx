@@ -43,5 +43,4 @@ export const IconCloudSection = () => {
     </div>
   );
 };
-
 export default IconCloudSection;
