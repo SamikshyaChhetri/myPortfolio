@@ -31,7 +31,6 @@ const Home = () => {
   useEffect(() => {
     setinClient(true);
   }, []);
-
   if (!inClient) return <div></div>;
 
   return (
