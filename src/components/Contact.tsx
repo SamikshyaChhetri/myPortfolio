@@ -22,7 +22,7 @@ export function Contact() {
               Get Connected with me
             </CardTitle>
             <CardDescription className="text-center">
-              I'd love to hear from you! Fill out the form below.
+              I would love to hear from you! Fill out the form below.
             </CardDescription>
           </CardHeader>
           <CardContent>
