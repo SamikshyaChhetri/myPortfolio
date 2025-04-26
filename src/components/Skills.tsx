@@ -116,7 +116,7 @@ const others = [
 
 const Skills = () => {
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1" id="skills">
       <div className="mx-10">
         <div className="flex flex-col gap-3">
           <div className="flex flex-row  font-bold text-[30px] pt-20 text-purple-700 text-center justify-center">

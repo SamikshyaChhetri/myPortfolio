@@ -14,7 +14,10 @@ import { Textarea } from "./ui/textarea";
 
 export function Contact() {
   return (
-    <div className="flex justify-center    bg-gradient-to-br from-purple-50 via-white to-purple-100 items-center ">
+    <div
+      className="flex justify-center    bg-gradient-to-br from-purple-50 via-white to-purple-100 items-center "
+      id="contact"
+    >
       <div className="min-h-screen w-[60%]  flex items-center justify-center ">
         <Card className="w-full max-w-md shadow-xl rounded-2xl border border-gray-200 bg-white relative overflow-hidden">
           <CardHeader>
@@ -62,7 +65,7 @@ export function Contact() {
           <BorderBeam duration={8} size={120} />
         </Card>
       </div>
-      <img src="/contactImg.svg" alt="" className="h-80 " />
+      <img src="/contact.svg" alt="" className="h-80 " />
     </div>
   );
 }

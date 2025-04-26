@@ -3,27 +3,34 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { CoolMode } from "./ui/cool-mode";
 const Header = () => {
   return (
-    <div>
+    <div id="home">
       <div className="flex gap-3 m-4">
         <CoolMode>
-          <Button variant="outline">
-            <Icon icon="solar:home-line-duotone" width="24" height="24" /> Home
-          </Button>
+          <a href="#home">
+            <Button variant="outline">
+              <Icon icon="solar:home-line-duotone" width="24" height="24" />{" "}
+              Home
+            </Button>
+          </a>
         </CoolMode>
         <CoolMode>
-          <Button variant="outline">
-            <Icon icon="carbon:skill-level-basic" width="32" height="32" />
-            Skills
-          </Button>
+          <a href="#skills">
+            <Button variant="outline">
+              <Icon icon="carbon:skill-level-basic" width="32" height="32" />
+              Skills
+            </Button>
+          </a>
         </CoolMode>
         <CoolMode>
-          <Button variant="outline">
-            <Icon icon="solar:laptop-3-linear" width="24" height="24" />
-            Projects
-          </Button>
+          <a href="#projects">
+            <Button variant="outline">
+              <Icon icon="solar:laptop-3-linear" width="24" height="24" />
+              Projects
+            </Button>
+          </a>
         </CoolMode>
         <CoolMode>
-          <a href="#about">
+          <a href="#contact">
             <Button variant="outline">
               <Icon
                 icon="solar:phone-calling-rounded-linear"

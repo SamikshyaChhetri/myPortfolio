@@ -1,3 +1,4 @@
+"use client";
 import { Contact } from "@/components/Contact";
 import Header from "@/components/Header";
 import Home from "@/components/Home";
@@ -7,7 +8,7 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 
 const page = () => {
   return (
-    <div className="w-full ">
+    <div className="w-full scroll-smooth ">
       <BackgroundBeamsWithCollision className="flex flex-col bg-gradient-to-br from-purple-50 via-white to-purple-100 ">
         <Header></Header>
 
