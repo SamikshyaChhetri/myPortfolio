@@ -233,6 +233,6 @@ export const CoolMode: React.FC<CoolModeProps> = ({ children, options }) => {
       return applyParticleEffect(ref.current, options);
     }
   }, [options]);
-
+  // @ts-expect-error : unnecessary error
   return React.cloneElement(children as React.ReactElement, { ref });
 };
