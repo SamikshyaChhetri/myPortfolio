@@ -95,6 +95,7 @@ export function Contact() {
                     placeholder="Your name"
                     {...form.register("name")}
                   />
+                  <Label>{form.formState.errors.name?.message}</Label>
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="email">Email</Label>
@@ -104,6 +105,7 @@ export function Contact() {
                     placeholder="you@example.com"
                     {...form.register("email")}
                   />
+                  <Label>{form.formState.errors.email?.message}</Label>
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="message">Message</Label>
@@ -113,6 +115,7 @@ export function Contact() {
                     rows={5}
                     {...form.register("message")}
                   />
+                  <Label>{form.formState.errors.message?.message}</Label>
                 </div>
               </div>
             </form>
@@ -121,9 +124,6 @@ export function Contact() {
             <Button
               type="submit"
               className="w-full bg-purple-700 hover:bg-purple-600"
-              onClick={() => {
-                sendMessage();
-              }}
             >
               Send Message
             </Button>
