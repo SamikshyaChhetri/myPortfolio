@@ -67,7 +67,6 @@ export function Contact() {
     };
 
     const webHook = process.env.NEXT_PUBLIC_WEBHOOK || "";
-    console.log(webHook);
     axios.post(webHook, messagePayload);
   }
   return (
