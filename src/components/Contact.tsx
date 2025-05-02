@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,13 +9,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 import { BorderBeam } from "./magicui/border-beam";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
+
 const schema = z.object({
   name: z.string().min(1, "Please enter your name"),
   email: z.string().email("Enter valid email"),
@@ -67,14 +71,34 @@ export function Contact() {
     };
 
     const webHook = process.env.NEXT_PUBLIC_WEBHOOK || "";
-    axios.post(webHook, messagePayload);
+    // axios.post(webHook, messagePayload);
+    mutation.mutate({ webHook, messagePayload });
   }
+  const mutation = useMutation({
+    mutationFn: async ({
+      webHook,
+      messagePayload,
+    }: {
+      webHook: string;
+      messagePayload: {};
+    }) => {
+      const response = await axios.post(webHook, messagePayload);
+      return response.data;
+    },
+    onSuccess: () => {
+      toast.success("Message sent");
+    },
+  });
+
   return (
     <div
       className="flex justify-center    bg-gradient-to-br from-purple-50 via-white to-purple-100 items-center "
       id="contact"
     >
-      <div className="min-h-screen w-[60%]  flex items-center justify-center ">
+      <form
+        onSubmit={form.handleSubmit(sendMessage)}
+        className="min-h-screen w-[60%]   flex items-center justify-center "
+      >
         <Card className="w-full max-w-md shadow-xl rounded-2xl border border-gray-200 bg-white relative overflow-hidden">
           <CardHeader>
             <CardTitle className="text-2xl text-center text-purple-700">
@@ -85,40 +109,44 @@ export function Contact() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={form.handleSubmit(sendMessage)}>
-              <div className="grid w-full items-center gap-4">
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Name</Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Your name"
-                    {...form.register("name")}
-                  />
-                  <Label>{form.formState.errors.name?.message}</Label>
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="you@example.com"
-                    {...form.register("email")}
-                  />
-                  <Label>{form.formState.errors.email?.message}</Label>
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Type your message here..."
-                    rows={5}
-                    {...form.register("message")}
-                  />
-                  <Label>{form.formState.errors.message?.message}</Label>
-                </div>
+            <div className="grid w-full items-center gap-4">
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="name">Name</Label>
+                <Input
+                  id="name"
+                  type="text"
+                  placeholder="Your name"
+                  {...form.register("name")}
+                />
+                <Label className="text-destructive">
+                  {form.formState.errors.name?.message}
+                </Label>
               </div>
-            </form>
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  {...form.register("email")}
+                />
+                <Label className="text-destructive">
+                  {form.formState.errors.email?.message}
+                </Label>
+              </div>
+              <div className="flex flex-col space-y-1.5">
+                <Label htmlFor="message">Message</Label>
+                <Textarea
+                  id="message"
+                  placeholder="Type your message here..."
+                  rows={5}
+                  {...form.register("message")}
+                />
+                <Label className="text-destructive">
+                  {form.formState.errors.message?.message}
+                </Label>
+              </div>
+            </div>
           </CardContent>
           <CardFooter className="pt-4 flex justify-end">
             <Button
@@ -130,7 +158,7 @@ export function Contact() {
           </CardFooter>
           <BorderBeam duration={8} size={120} />
         </Card>
-      </div>
+      </form>
       <img src="/contact.svg" alt="" className="h-80 " />
     </div>
   );
