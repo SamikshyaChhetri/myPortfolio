@@ -88,6 +88,9 @@ export function Contact() {
     onSuccess: () => {
       toast.success("Message sent");
     },
+    onError: () => {
+      toast.error("Something went wrong");
+    },
   });
 
   return (
@@ -150,10 +153,17 @@ export function Contact() {
           </CardContent>
           <CardFooter className="pt-4 flex justify-end">
             <Button
+              disabled={mutation.isPending || mutation.isSuccess}
               type="submit"
               className="w-full bg-purple-700 hover:bg-purple-600"
             >
-              Send Message
+              {mutation.isPending ? (
+                <div className="loader"></div>
+              ) : mutation.isSuccess ? (
+                "Message Sent"
+              ) : (
+                "Send message"
+              )}
             </Button>
           </CardFooter>
           <BorderBeam duration={8} size={120} />
