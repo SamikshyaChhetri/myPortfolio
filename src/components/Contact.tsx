@@ -80,7 +80,7 @@ export function Contact() {
       messagePayload,
     }: {
       webHook: string;
-      messagePayload: {};
+      messagePayload: object;
     }) => {
       const response = await axios.post(webHook, messagePayload);
       return response.data;
