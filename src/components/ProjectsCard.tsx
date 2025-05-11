@@ -13,7 +13,7 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ image, desc, link, name }) => {
       <img
         src={image}
         alt={name || "Project Image"}
-        className="w-full h-36 m-5 "
+        className="w-full h-36 m-5  rounded-md"
       />
       <div className="p-4 flex flex-col ">
         {name && (
