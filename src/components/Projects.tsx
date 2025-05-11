@@ -60,7 +60,7 @@ const Projects = () => {
       <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white my-5">
         My Projects
       </h2>
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="grid grid-cols-2 gap-10">
         {myProjects.map((item, index) => (
           <ProjectsCard
             key={index}

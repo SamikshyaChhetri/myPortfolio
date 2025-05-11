@@ -9,7 +9,7 @@ interface ProjectsCardProps {
 }
 const ProjectsCard: FC<ProjectsCardProps> = ({ image, desc, link, name }) => {
   return (
-    <div className="w-64  rounded-xl shadow-lg bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 transition hover:scale-105 hover:shadow-xl duration-300">
+    <div className="flex justify-between  rounded-xl shadow-lg bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 transition hover:scale-105 hover:shadow-xl duration-300 ">
       <img
         src={image}
         alt={name || "Project Image"}
