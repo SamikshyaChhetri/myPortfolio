@@ -13,26 +13,26 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ image, desc, link, name }) => {
       <img
         src={image}
         alt={name || "Project Image"}
-        className="w-full h-36 object-cover"
+        className="w-full h-36 m-5 "
       />
-      <div className="p-4 flex flex-col gap-3 h-56">
+      <div className="p-4 flex flex-col ">
         {name && (
           <h3 className="text-lg font-bold text-neutral-800 dark:text-white">
             {name}
           </h3>
         )}
-        <div className="flex flex-col justify-between h-full gap-3">
+        <div className="flex flex-col justify-between gap-3 ">
           <p className="text-sm text-gray-600 dark:text-neutral-300">{desc}</p>
-          <Button className="bg-purple-700 w-full hover:bg-purple-600">
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" text-sm  text-white  "
-            >
-              Visit Site
-            </a>
-          </Button>
+          <div className="flex gap-2">
+            <Button className="bg-purple-700 w-fit hover:bg-purple-600">
+              <a href={link} target="_blank" className=" text-white  ">
+                Demo
+              </a>
+            </Button>
+            <Button>
+              <a href="{link}">Github</a>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
