@@ -6,6 +6,7 @@ interface ProjectsCardProps {
   desc: string;
   link: string;
   name?: string;
+  github: string;
 }
 const ProjectsCard: FC<ProjectsCardProps> = ({ image, desc, link, name }) => {
   return (
@@ -30,7 +31,7 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ image, desc, link, name }) => {
               </a>
             </Button>
             <Button>
-              <a href="{link}">Github</a>
+              <a href="{github}">Github</a>
             </Button>
           </div>
         </div>
