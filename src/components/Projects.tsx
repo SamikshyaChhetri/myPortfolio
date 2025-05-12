@@ -76,6 +76,7 @@ const Projects = () => {
             name={item.name || ""}
             desc={item.desc}
             link={item.link}
+            github={item.github}
           />
         ))}
       </div>
