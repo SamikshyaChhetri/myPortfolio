@@ -8,7 +8,13 @@ interface ProjectsCardProps {
   name?: string;
   github: string;
 }
-const ProjectsCard: FC<ProjectsCardProps> = ({ image, desc, link, name }) => {
+const ProjectsCard: FC<ProjectsCardProps> = ({
+  image,
+  desc,
+  link,
+  name,
+  github,
+}) => {
   return (
     <div className="flex justify-between  rounded-xl shadow-lg bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 transition hover:scale-105 hover:shadow-xl duration-300 ">
       <img
@@ -31,7 +37,7 @@ const ProjectsCard: FC<ProjectsCardProps> = ({ image, desc, link, name }) => {
               </a>
             </Button>
             <Button>
-              <a href="{github}">Github</a>
+              <a href={github}>Github</a>
             </Button>
           </div>
         </div>
