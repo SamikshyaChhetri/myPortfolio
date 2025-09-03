@@ -34,16 +34,16 @@ const ProjectsCard: FC<ProjectsCardProps> = ({
         <motion.img
           src={image}
           alt={name || "Project Image"}
-          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-36 sm:h-44 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
           whileHover={{ scale: 1.05 }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
-      <div className="p-6">
+      <div className="p-4 sm:p-5 lg:p-6">
         {name && (
           <motion.h3
-            className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors duration-300"
+            className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-purple-300 transition-colors duration-300"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -53,7 +53,7 @@ const ProjectsCard: FC<ProjectsCardProps> = ({
         )}
 
         <motion.p
-          className="text-gray-300 text-sm leading-relaxed mb-6 line-clamp-3"
+          className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 lg:mb-6 line-clamp-3"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -62,26 +62,26 @@ const ProjectsCard: FC<ProjectsCardProps> = ({
         </motion.p>
 
         <motion.div
-          className="flex gap-3"
+          className="flex gap-2 sm:gap-3"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
           <Button
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 flex-1 group/btn"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 flex-1 group/btn text-xs sm:text-sm py-1.5 sm:py-2"
             asChild
           >
             <a
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2"
+              className="flex items-center justify-center gap-1.5 sm:gap-2"
             >
               <Icon
                 icon="solar:eye-linear"
-                width="18"
-                height="18"
-                className="group-hover/btn:scale-110 transition-transform duration-200"
+                width="16"
+                height="16"
+                className="sm:w-[18px] sm:h-[18px] group-hover/btn:scale-110 transition-transform duration-200"
               />
               Demo
             </a>
@@ -89,20 +89,20 @@ const ProjectsCard: FC<ProjectsCardProps> = ({
 
           <Button
             variant="outline"
-            className="border-slate-600 text-gray-300 hover:bg-slate-700 hover:text-white hover:border-slate-500 flex-1 group/btn"
+            className="border-slate-600 text-gray-500 hover:bg-slate-700 hover:text-white hover:border-slate-500 flex-1 group/btn text-xs sm:text-sm py-1.5 sm:py-2"
             asChild
           >
             <a
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2"
+              className="flex items-center justify-center gap-1.5 sm:gap-2"
             >
               <Icon
                 icon="line-md:github-loop"
-                width="18"
-                height="18"
-                className="group-hover/btn:scale-110 transition-transform duration-200"
+                width="16"
+                height="16"
+                className="sm:w-[18px] sm:h-[18px] group-hover/btn:scale-110 transition-transform duration-200"
               />
               GitHub
             </a>

@@ -2,15 +2,20 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 const SocialMedia = () => {
   return (
-    <div className="flex flex-col gap-5 rounded-md p-1">
+    <div className="flex flex-row lg:flex-col gap-3 sm:gap-4 lg:gap-5 rounded-md p-1">
       <div>
         <a
           href="https://github.com/SamikshyaChhetri"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex items-center justify-center rounded-full border border-white/20 p-3 hover:bg-black hover:text-white transition duration-300">
-            <Icon icon="line-md:github-loop" width="28" height="28" />
+          <div className="flex items-center justify-center rounded-full border border-white/20 p-2 sm:p-3 hover:bg-black hover:text-white transition duration-300">
+            <Icon
+              icon="line-md:github-loop"
+              width="24"
+              height="24"
+              className="sm:w-7 sm:h-7"
+            />
           </div>
         </a>
       </div>
@@ -20,20 +25,30 @@ const SocialMedia = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex items-center justify-center rounded-full border border-white/20 p-3 hover:bg-[#1877F2] hover:text-white transition duration-300">
-            <Icon icon="line-md:facebook" width="28" height="28" />
+          <div className="flex items-center justify-center rounded-full border border-white/20 p-2 sm:p-3 hover:bg-[#1877F2] hover:text-white transition duration-300">
+            <Icon
+              icon="line-md:facebook"
+              width="24"
+              height="24"
+              className="sm:w-7 sm:h-7"
+            />
           </div>
         </a>
       </div>
-      <div className="w-full border border-white/20"></div>
+      <div className="w-full lg:w-auto h-px lg:h-4 border-t lg:border-t-0 lg:border-l border-white/20"></div>
       <div>
         <a
           href="https://www.instagram.com/samuu_hehe/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex items-center justify-center rounded-full border border-white/20 p-3 hover:text-white transition duration-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600">
-            <Icon icon="line-md:instagram" width="28" height="28" />
+          <div className="flex items-center justify-center rounded-full border border-white/20 p-2 sm:p-3 hover:text-white transition duration-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600">
+            <Icon
+              icon="line-md:instagram"
+              width="24"
+              height="24"
+              className="sm:w-7 sm:h-7"
+            />
           </div>
         </a>
       </div>
@@ -43,8 +58,13 @@ const SocialMedia = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex items-center justify-center rounded-full border border-white/20 p-3 hover:bg-[#0077B5] hover:text-white transition duration-300">
-            <Icon icon="line-md:linkedin" width="28" height="28" />
+          <div className="flex items-center justify-center rounded-full border border-white/20 p-2 sm:p-3 hover:bg-[#0077B5] hover:text-white transition duration-300">
+            <Icon
+              icon="line-md:linkedin"
+              width="24"
+              height="24"
+              className="sm:w-7 sm:h-7"
+            />
           </div>
         </a>
       </div>

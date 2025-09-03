@@ -22,7 +22,7 @@ const page = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-emerald-900/20"></div>
           <div className="relative z-10">
             <Header />
-            <div className="h-20"></div>
+            <div className="h-16 sm:h-20"></div>
             <Home />
           </div>
         </BackgroundBeamsWithCollision>

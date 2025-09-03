@@ -38,13 +38,13 @@ const Home = () => {
 
   return (
     <motion.div
-      className="flex flex-col lg:flex-row items-center justify-center min-h-[80vh] px-4 lg:px-8 gap-8"
+      className="flex flex-col lg:flex-row items-center justify-center min-h-[70vh] sm:min-h-[80vh] px-2 sm:px-4 lg:px-8 gap-4 sm:gap-6 lg:gap-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
       <motion.div
-        className="flex-1 max-w-4xl"
+        className="flex-1 max-w-4xl w-full"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
@@ -53,7 +53,7 @@ const Home = () => {
       </motion.div>
 
       <motion.div
-        className="flex justify-center lg:justify-end"
+        className="flex justify-center lg:justify-end mt-4 lg:mt-0"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}

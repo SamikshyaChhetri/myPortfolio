@@ -84,26 +84,34 @@ const Projects = () => {
   };
 
   return (
-    <section className="py-20 px-4 lg:px-10" id="projects">
+    <section
+      className="py-12 sm:py-16 lg:py-20 px-2 sm:px-4 lg:px-10"
+      id="projects"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="flex items-center justify-center gap-3 font-bold text-4xl lg:text-5xl text-white mb-4">
-            <Icon icon="solar:laptop-3-linear" width="50" height="50" />
+          <div className="flex items-center justify-center gap-2 sm:gap-3 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-white mb-3 sm:mb-4">
+            <Icon
+              icon="solar:laptop-3-linear"
+              width="30"
+              height="30"
+              className="sm:w-10 sm:h-10 lg:w-12 lg:h-12"
+            />
             My Projects
           </div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-4">
             Here are some of the projects I've worked on recently
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
