@@ -9,8 +9,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -25,8 +27,9 @@ const schema = z.object({
   message: z
     .string()
     .min(10, "Please enter your message")
-    .max(50, "Too long message"),
+    .max(500, "Message too long (max 500 characters)"),
 });
+
 export function Contact() {
   const form = useForm({
     resolver: zodResolver(schema),
@@ -36,19 +39,20 @@ export function Contact() {
       message: "",
     },
   });
+
   function sendMessage() {
     const values = form.getValues();
     const messagePayload = {
       content: `@here`,
       embeds: [
         {
-          title: `Hello Samikshya,${values.name} is trying to contact you`,
+          title: `Hello Samikshya, ${values.name} is trying to contact you`,
           description: "Here are the details: ",
-          color: 9175551, // Hex color code (0x58BAF7 for a blue color)
+          color: 9175551,
           footer: {
             text: "Submitted at",
           },
-          timestamp: new Date(), // Adds the current timestamp to the embed
+          timestamp: new Date(),
           fields: [
             {
               name: "Name",
@@ -71,9 +75,9 @@ export function Contact() {
     };
 
     const webHook = process.env.NEXT_PUBLIC_WEBHOOK || "";
-    // axios.post(webHook, messagePayload);
     mutation.mutate({ webHook, messagePayload });
   }
+
   const mutation = useMutation({
     mutationFn: async ({
       webHook,
@@ -86,90 +90,165 @@ export function Contact() {
       return response.data;
     },
     onSuccess: () => {
-      toast.success("Message sent");
+      toast.success("Message sent successfully!");
+      form.reset();
     },
     onError: () => {
-      toast.error("Something went wrong");
+      toast.error("Something went wrong. Please try again.");
     },
   });
 
   return (
-    <div
-      className="flex justify-center    bg-gradient-to-br from-purple-50 via-white to-purple-100 items-center "
-      id="contact"
-    >
-      <form
-        onSubmit={form.handleSubmit(sendMessage)}
-        className="min-h-screen w-[60%]   flex items-center justify-center "
-      >
-        <Card className="w-full max-w-md shadow-xl rounded-2xl border border-gray-200 bg-white relative overflow-hidden">
-          <CardHeader>
-            <CardTitle className="text-2xl text-center text-purple-700">
-              Get Connected with me
-            </CardTitle>
-            <CardDescription className="text-center">
-              I would love to hear from you! Fill out the form below.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid w-full items-center gap-4">
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
-                  type="text"
-                  placeholder="Your name"
-                  {...form.register("name")}
-                />
-                <Label className="text-destructive">
-                  {form.formState.errors.name?.message}
-                </Label>
-              </div>
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  {...form.register("email")}
-                />
-                <Label className="text-destructive">
-                  {form.formState.errors.email?.message}
-                </Label>
-              </div>
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="message">Message</Label>
-                <Textarea
-                  id="message"
-                  placeholder="Type your message here..."
-                  rows={5}
-                  {...form.register("message")}
-                />
-                <Label className="text-destructive">
-                  {form.formState.errors.message?.message}
-                </Label>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="pt-4 flex justify-end">
-            <Button
-              disabled={mutation.isPending || mutation.isSuccess}
-              type="submit"
-              className="w-full bg-purple-700 hover:bg-purple-600"
+    <div className="py-20 px-4 lg:px-10" id="contact">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center justify-center gap-3 font-bold text-4xl lg:text-5xl text-white mb-4">
+            <Icon
+              icon="solar:phone-calling-rounded-linear"
+              width="50"
+              height="50"
+            />
+            Get In Touch
+          </div>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            I'd love to hear from you! Feel free to reach out for collaborations
+            or just a friendly hello.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center lg:justify-start"
+          >
+            <img
+              src="/contact.svg"
+              alt="Contact illustration"
+              className="w-full max-w-md h-auto"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <form
+              onSubmit={form.handleSubmit(sendMessage)}
+              className="flex justify-center"
             >
-              {mutation.isPending ? (
-                <div className="loader"></div>
-              ) : mutation.isSuccess ? (
-                "Message Sent"
-              ) : (
-                "Send message"
-              )}
-            </Button>
-          </CardFooter>
-          <BorderBeam duration={8} size={120} />
-        </Card>
-      </form>
-      <img src="/contact.svg" alt="" className="h-80 " />
+              <Card className="w-full max-w-lg bg-slate-800/80 backdrop-blur-sm border-slate-700/50 shadow-2xl">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl text-white">
+                    Let's Connect
+                  </CardTitle>
+                  <CardDescription className="text-gray-400">
+                    Fill out the form below and I'll get back to you soon.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid w-full items-center gap-6">
+                    <div className="flex flex-col space-y-2">
+                      <Label htmlFor="name" className="text-gray-300">
+                        Name
+                      </Label>
+                      <Input
+                        id="name"
+                        type="text"
+                        placeholder="Your name"
+                        className="bg-slate-700/50 border-slate-600/50 text-white placeholder:text-gray-400"
+                        {...form.register("name")}
+                      />
+                      {form.formState.errors.name && (
+                        <Label className="text-red-400 text-sm">
+                          {form.formState.errors.name?.message}
+                        </Label>
+                      )}
+                    </div>
+                    <div className="flex flex-col space-y-2">
+                      <Label htmlFor="email" className="text-gray-300">
+                        Email
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="you@example.com"
+                        className="bg-slate-700/50 border-slate-600/50 text-white placeholder:text-gray-400"
+                        {...form.register("email")}
+                      />
+                      {form.formState.errors.email && (
+                        <Label className="text-red-400 text-sm">
+                          {form.formState.errors.email?.message}
+                        </Label>
+                      )}
+                    </div>
+                    <div className="flex flex-col space-y-2">
+                      <Label htmlFor="message" className="text-gray-300">
+                        Message
+                      </Label>
+                      <Textarea
+                        id="message"
+                        placeholder="Type your message here..."
+                        rows={5}
+                        className="bg-slate-700/50 border-slate-600/50 text-white placeholder:text-gray-400 resize-none"
+                        {...form.register("message")}
+                      />
+                      {form.formState.errors.message && (
+                        <Label className="text-red-400 text-sm">
+                          {form.formState.errors.message?.message}
+                        </Label>
+                      )}
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button
+                    disabled={mutation.isPending || mutation.isSuccess}
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-2 transition-all duration-300"
+                  >
+                    {mutation.isPending ? (
+                      <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        Sending...
+                      </div>
+                    ) : mutation.isSuccess ? (
+                      <div className="flex items-center gap-2">
+                        <Icon
+                          icon="solar:check-circle-linear"
+                          width="20"
+                          height="20"
+                        />
+                        Message Sent!
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <Icon
+                          icon="solar:letter-linear"
+                          width="20"
+                          height="20"
+                        />
+                        Send Message
+                      </div>
+                    )}
+                  </Button>
+                </CardFooter>
+                <BorderBeam duration={8} size={120} />
+              </Card>
+            </form>
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 }

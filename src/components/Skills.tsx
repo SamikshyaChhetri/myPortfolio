@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { motion } from "framer-motion";
 import IconCloudSection from "./IconCloud";
 import SkillsCard from "./SkillsCard";
 
@@ -115,87 +116,137 @@ const others = [
 ];
 
 const Skills = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="flex gap-1" id="skills">
-      <div className="mx-10">
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-row  font-bold text-[30px] pt-20 text-purple-700 text-center justify-center">
+    <div className="py-20 px-4 lg:px-10" id="skills">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center justify-center gap-3 font-bold text-4xl lg:text-5xl text-white mb-4">
             <Icon icon="fluent-color:laptop-24" width="50" height="50" />
-            Skills
+            Skills & Technologies
           </div>
-          <div className="flex justify-between">
-            <div>
-              <div className="flex flex-col gap-3 mt-2">
-                <div className="font-bold text-lg">Languages</div>
-                <div className="flex gap-5 flex-wrap">
-                  {languages.map((item) => (
-                    <SkillsCard
-                      name={item.name}
-                      icon={item.icon}
-                      key={item.name}
-                    />
-                  ))}
-                </div>
-              </div>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Technologies I've been working with recently
+          </p>
+        </motion.div>
 
-              <div className="flex flex-col gap-3 mt-2">
-                <div className="font-bold text-lg">
-                  Frameworks and Libraries
-                </div>
-                <div className="flex gap-5 flex-wrap ">
-                  {frameworks.map((item) => (
-                    <SkillsCard
-                      name={item.name}
-                      icon={item.icon}
-                      key={item.name}
-                    />
-                  ))}
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+          <motion.div
+            className="space-y-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div variants={itemVariants}>
+              <h3 className="font-bold text-xl text-white mb-6">Languages</h3>
+              <div className="flex gap-4 flex-wrap">
+                {languages.map((item) => (
+                  <SkillsCard
+                    name={item.name}
+                    icon={item.icon}
+                    key={item.name}
+                  />
+                ))}
               </div>
+            </motion.div>
 
-              <div className="flex flex-col gap-3 mt-2">
-                <div className="font-bold text-lg">Database and ORM</div>
-                <div className="flex gap-5">
-                  {database.map((item) => (
-                    <SkillsCard
-                      name={item.name}
-                      icon={item.icon}
-                      key={item.name}
-                    />
-                  ))}
-                </div>
+            <motion.div variants={itemVariants}>
+              <h3 className="font-bold text-xl text-white mb-6">
+                Frameworks & Libraries
+              </h3>
+              <div className="flex gap-4 flex-wrap">
+                {frameworks.map((item) => (
+                  <SkillsCard
+                    name={item.name}
+                    icon={item.icon}
+                    key={item.name}
+                  />
+                ))}
               </div>
-            </div>
+            </motion.div>
 
-            <IconCloudSection></IconCloudSection>
-            <div>
-              <div className="flex flex-col gap-3 mt-2">
-                <div className="font-bold text-lg">Hosting and SAAS</div>
-                <div className="flex gap-5">
-                  {hosting.map((item) => (
-                    <SkillsCard
-                      name={item.name}
-                      icon={item.icon}
-                      key={item.name}
-                    />
-                  ))}
-                </div>
+            <motion.div variants={itemVariants}>
+              <h3 className="font-bold text-xl text-white mb-6">
+                Database & ORM
+              </h3>
+              <div className="flex gap-4 flex-wrap">
+                {database.map((item) => (
+                  <SkillsCard
+                    name={item.name}
+                    icon={item.icon}
+                    key={item.name}
+                  />
+                ))}
               </div>
+            </motion.div>
+          </motion.div>
 
-              <div className="flex flex-col gap-3 mt-2">
-                <div className="font-bold text-lg">Others</div>
-                <div className="flex gap-5 flex-wrap ">
-                  {others.map((item) => (
-                    <SkillsCard
-                      name={item.name}
-                      icon={item.icon}
-                      key={item.name}
-                    />
-                  ))}
-                </div>
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <IconCloudSection />
+          </motion.div>
+
+          <motion.div
+            className="space-y-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div variants={itemVariants}>
+              <h3 className="font-bold text-xl text-white mb-6">
+                Hosting & SaaS
+              </h3>
+              <div className="flex gap-4 flex-wrap">
+                {hosting.map((item) => (
+                  <SkillsCard
+                    name={item.name}
+                    icon={item.icon}
+                    key={item.name}
+                  />
+                ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <h3 className="font-bold text-xl text-white mb-6">Others</h3>
+              <div className="flex gap-4 flex-wrap">
+                {others.map((item) => (
+                  <SkillsCard
+                    name={item.name}
+                    icon={item.icon}
+                    key={item.name}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>

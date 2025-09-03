@@ -1,3 +1,5 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { motion } from "framer-motion";
 import ProjectsCard from "./ProjectsCard";
 
 const myProjects = [
@@ -60,25 +62,65 @@ const myProjects = [
 ];
 
 const Projects = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   return (
-    <section
-      className="my-10 md:px-28  flex flex-col gap-10 bg-gradient-to-br from-purple-50 via-white to-purple-10"
-      id="projects"
-    >
-      <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white my-5">
-        My Projects
-      </h2>
-      <div className="grid grid-cols-2 gap-10">
-        {myProjects.map((item, index) => (
-          <ProjectsCard
-            key={index}
-            image={item.image}
-            name={item.name || ""}
-            desc={item.desc}
-            link={item.link}
-            github={item.github}
-          />
-        ))}
+    <section className="py-20 px-4 lg:px-10" id="projects">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center justify-center gap-3 font-bold text-4xl lg:text-5xl text-white mb-4">
+            <Icon icon="solar:laptop-3-linear" width="50" height="50" />
+            My Projects
+          </div>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Here are some of the projects I've worked on recently
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {myProjects.map((item, index) => (
+            <motion.div key={index} variants={itemVariants}>
+              <ProjectsCard
+                image={item.image}
+                name={item.name || ""}
+                desc={item.desc}
+                link={item.link}
+                github={item.github}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

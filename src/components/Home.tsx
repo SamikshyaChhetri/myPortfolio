@@ -1,7 +1,9 @@
 "use client";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import SocialMedia from "./SocialMedia";
 import { AnimatedTestimonials } from "./ui/animated-testimonials";
+
 const Home = () => {
   const testimonials = [
     {
@@ -31,18 +33,34 @@ const Home = () => {
   useEffect(() => {
     setinClient(true);
   }, []);
+
   if (!inClient) return <div></div>;
 
   return (
-    <div className="flex  items-center justify-center ">
-      <div>
+    <motion.div
+      className="flex flex-col lg:flex-row items-center justify-center min-h-[80vh] px-4 lg:px-8 gap-8"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
+      <motion.div
+        className="flex-1 max-w-4xl"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
         <AnimatedTestimonials testimonials={testimonials} />
-      </div>
-      <div className="flex justify-between">
-        <div className="w-56"></div>
-        <SocialMedia></SocialMedia>
-      </div>
-    </div>
+      </motion.div>
+
+      <motion.div
+        className="flex justify-center lg:justify-end"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
+        <SocialMedia />
+      </motion.div>
+    </motion.div>
   );
 };
 
