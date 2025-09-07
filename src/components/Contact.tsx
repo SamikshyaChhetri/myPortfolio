@@ -118,8 +118,8 @@ export function Contact() {
             Get In Touch
           </div>
           <p className="text-gray-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-4">
-            I'd love to hear from you! Feel free to reach out for collaborations
-            or just a friendly hello.
+            I&apos;d love to hear from you! Feel free to reach out for
+            collaborations or just a friendly hello.
           </p>
         </motion.div>
 
@@ -152,10 +152,10 @@ export function Contact() {
               <Card className="w-full max-w-lg bg-slate-800/80 backdrop-blur-sm border-slate-700/50 shadow-2xl">
                 <CardHeader className="text-center pb-4 sm:pb-6">
                   <CardTitle className="text-xl sm:text-2xl text-white">
-                    Let's Connect
+                    Let&apos;s Connect
                   </CardTitle>
                   <CardDescription className="text-gray-400 text-sm sm:text-base">
-                    Fill out the form below and I'll get back to you soon.
+                    Fill out the form below and I&apos;ll get back to you soon.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

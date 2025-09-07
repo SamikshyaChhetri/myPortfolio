@@ -373,7 +373,7 @@ const Skills = () => {
             <span className="text-center">Skills & Technologies</span>
           </div>
           <p className="text-gray-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-4">
-            Technologies I've been working with recently
+            Technologies I&apos;ve been working with recently
           </p>
         </motion.div>
 
